@@ -158,3 +158,9 @@ lines_per_file = 50
 train_ratio = 0.8
 update_input(input_dir, tsv_database_dir)
 update_datasets(tsv_database_dir, dataset_dir, lines_per_file, train_ratio)
+tsv_database_dir = 'Path to the output TSV directory'
+dataset_dir = 'Path to the output divided data TSV directory'
+lines_per_file = 50
+train_ratio = 0.8
+update_input(input_dir, tsv_database_dir)
+update_datasets(tsv_database_dir, dataset_dir, lines_per_file, train_ratio)
