@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 datasets_dir = "input TSV files"
 encoded_dir = "output encoded TSV files"
@@ -125,4 +126,3 @@ def update_encoded_datasets(datasets_dir, encoded_dir, encoding_type, labels, fi
         encode_file(tsv_file, encoded_dataset_tsv_path, window_size, fill_rows, step_size, encoding_type, labels)
 
 update_encoded_datasets(datasets_dir, encoded_dir, encoding_type, labels, fill_rows, window_size, step_size)
-
