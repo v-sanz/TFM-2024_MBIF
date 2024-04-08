@@ -59,6 +59,7 @@ def encode_sequence(sequence, encoding_type, labels):
 def preprocess_seq(sequence, window_size, step_size, encoding_type, labels, gc_inclusion):
     encoded_subseqs = []
     preprocessed_seq = []
+    subseqs = sliding_window(sequence, window_size, step_size)
     for subseq in subseqs: 
         encoded_subseq = encode_sequence(subseq, encoding_type, labels)
         encoded_subseqs.append(encoded_subseq)
@@ -85,7 +86,7 @@ def predict_subseq(subseq, model_path, model_type, gc_inclusion, encoding_type):
         print("Model not found.")
         exit()
     if gc_inclusion:
-        cols = [gc_percent]
+        cols = ['gc_percent']
     else:
         cols = []
     for i in range(1, len(subseq)+1):
